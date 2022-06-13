@@ -1,6 +1,7 @@
 const requests = {
   CoinsList:
-    'coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false'
+    'coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false',
+  GetHistoryBitcoin: 'coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily'
 }
 
 export default requests

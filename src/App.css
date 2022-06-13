@@ -1,3 +1,53 @@
+.text-image {
+  position: absolute;
+  bottom: 18em;
+}
+.header-height {
+  height: 40em;
+}
+
+.bg-card {
+  background: rgb(117, 32, 255);
+  background: linear-gradient(184deg, rgba(117, 32, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.border-card {
+  border: solid 0.5px #7520ff;
+}
+
+.input-width {
+  width: 500px;
+}
+
+.button-input {
+  margin-left: -160px;
+  width: 150px;
+  background-color: white;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+}
+
+@media only screen and (max-width: 660px) {
+  .input-width {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .input-width {
+    width: 280px;
+  }
+  .button-input {
+    margin-left: -110px;
+    width: 100px;
+    background-color: white;
+    border-radius: 20px;
+    height: 40px;
+    display: flex;
+  }
+}
+
 .App {
   text-align: center;
 }
