@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from './../api/axios'
-import Chart from './Chart'
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,7 +16,7 @@ import requests from '../api/requests'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-const bitcoinUrl = requests.GetHistoryBitcoin
+// const bitcoinUrl = requests.GetHistoryBitcoin
 const ethUrl = requests.GetHistoryEth
 
 export const options = {
@@ -60,19 +60,19 @@ const labels = [
 
 function Card({ fetchUrl }) {
   const [coin, setCoin] = React.useState()
-  const [bitcoin, setBitcoin] = React.useState(null)
+  // const [bitcoin, setBitcoin] = React.useState(null)
   const [eth, setEth] = React.useState(null)
 
-  React.useEffect(() => {
-    async function fetchBitcoin() {
-      const request = await axios.get(bitcoinUrl)
-      // console.log(request)
-      setBitcoin(request.data)
-      return request
-    }
-    fetchBitcoin()
-  }, [])
-  console.log('BITCOIN', bitcoin)
+  // React.useEffect(() => {
+  //   async function fetchBitcoin() {
+  //     const request = await axios.get(bitcoinUrl)
+  //     // console.log(request)
+  //     setBitcoin(request.data)
+  //     return request
+  //   }
+  //   fetchBitcoin()
+  // }, [])
+  // console.log('BITCOIN', bitcoin)
 
   React.useEffect(() => {
     async function fetchEth() {
@@ -85,17 +85,17 @@ function Card({ fetchUrl }) {
   }, [])
   console.log('ETH', eth)
 
-  const bitcoinData = {
-    labels,
-    datasets: [
-      {
-        data: bitcoin && bitcoin.prices.map(value => value[1]),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        display: false
-      }
-    ]
-  }
+  // const bitcoinData = {
+  //   labels,
+  //   datasets: [
+  //     {
+  //       data: bitcoin && bitcoin.prices.map(value => value[1]),
+  //       borderColor: 'rgb(255, 99, 132)',
+  //       backgroundColor: 'rgba(255, 99, 132, 0.5)',
+  //       display: false
+  //     }
+  //   ]
+  // }
 
   const ethData = {
     labels,
@@ -109,10 +109,10 @@ function Card({ fetchUrl }) {
     ]
   }
 
-  let historyData = [bitcoinData, ethData]
+  // let historyData = [bitcoinData, ethData]
 
-  let fullData = [coin, historyData]
-  console.log('FULL DATA', fullData)
+  // let fullData = [coin, historyData]
+  // console.log('FULL DATA', fullData)
 
   React.useEffect(() => {
     async function fetchData() {
@@ -124,6 +124,10 @@ function Card({ fetchUrl }) {
     fetchData()
   }, [fetchUrl])
   console.log('COIN', coin)
+
+  // const fullData = []
+  // const full = fullData.concat(coin, bitcoin)
+  // console.log('FULL DATA', full)
 
   if (!coin) return null
 
@@ -161,11 +165,12 @@ function Card({ fetchUrl }) {
               <div
                 className={item.price_change_percentage_24h > 0 ? 'text-green-100' : 'text-red-100'}
               >
-                <span>{item.price_change_percentage_24h} %</span>
+                <span className="flex">
+                  {item.price_change_percentage_24h > 0 ? <div>+</div> : null}
+                  {item.price_change_percentage_24h} %
+                </span>
               </div>
-              <div className="w-40">
-                <Line options={options} data={bitcoinData} />
-              </div>
+              {/* <div className="w-40">{}</div> */}
               <div className="flex mt-4 space-x-3 lg:mt-6">
                 <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
                   Analyze

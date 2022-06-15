@@ -1,6 +1,11 @@
+import React from 'react'
+import { useAPI } from '../apiContext'
+
 import { header } from '../images/images'
 
 function Header() {
+  const { bitcoin } = useAPI()
+  console.log('CONTEXT', bitcoin)
   return (
     <>
       <div className="header-height">
@@ -15,6 +20,11 @@ function Header() {
             Cryptocurrencies <br />
           </span>
           <span className="text-2xl xs:text-4xl md:text-4xl lg:text-5xl">The smart way.</span>
+          {/* <span className="text-2xl xs:text-4xl md:text-4xl lg:text-5xl">
+            {bitcoin.prices.map(item => (
+              <div>{item[1]}</div>
+            ))}
+          </span> */}
         </p>
       </div>
     </>
