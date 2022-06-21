@@ -1,43 +1,33 @@
-import React, { useContext, useEffect, useState, createContext } from 'react'
-import axios from 'axios'
-import requests from './api/requests'
+// import React, { useContext, createContext, useState, useEffect } from 'react'
+// import axios from 'axios'
 
-const APIContext = createContext()
+// const APIContext = createContext()
 
-const bitcoinUrl = requests.GetHistoryBitcoin
+// export function APIContextProvider({ children }, props) {
+//   const [data, setData] = useState('')
 
-export function APIContextProvider({ children }) {
-  const [bitcoin, setBitcoin] = useState([])
+//   console.log('PROPS', props)
 
-  useEffect(() => {
-    async function fetchBitcoin() {
-      const { data } = await axios.get(
-        `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily`
-      )
-      console.log(data)
-      setBitcoin(data)
-    }
-    fetchBitcoin()
-  }, [])
-  //
+//   useEffect(() => {
+//     axios
+//       .get(`https://api.coingecko.com/api/v3/coins/${props.id}?`)
+//       .then(res => {
+//         console.log(res)
+//         setData(res.data)
+//       })
+//       .catch(err => {
+//         console.log(err)
+//       })
+//   }, [props.id])
+//   console.log('CONTEXT', data)
 
-  console.log('BITCOIN', bitcoin)
+//   return <APIContext.Provider value={{ data }}>{children}</APIContext.Provider>
+// }
 
-  return (
-    <APIContext.Provider
-      value={{
-        bitcoin
-      }}
-    >
-      {children}
-    </APIContext.Provider>
-  )
-}
-
-export function useAPI() {
-  const context = useContext(APIContext)
-  if (context === undefined) {
-    throw new Error('Context must be used within a Provider')
-  }
-  return context
-}
+// export function useAPI() {
+//   const context = useContext(APIContext)
+//   if (context === undefined) {
+//     throw new Error('Context must be used within a Provider')
+//   }
+//   return context
+// }

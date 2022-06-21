@@ -1,25 +1,18 @@
 import React from 'react'
-import requests from './api/requests'
+import { BrowserRouter } from 'react-router-dom'
+
 import './App.css'
-import { APIContextProvider } from './apiContext'
-import Card from './components/Card'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import Router from './routes/Router'
+// import { APIContextProvider } from './apiContext'
 
 function App() {
   return (
-    <div className="App bg-secondary-100">
-      <APIContextProvider>
-        <div>
-          <Header />
-        </div>
-        <div className="mt-0 md:mt-28 lg:mt-80">
-          <Card fetchUrl={requests.CoinsList} />
-        </div>
-        <div>
-          <Footer />
-        </div>
-      </APIContextProvider>
+    <div className="App bg-radial">
+      {/* <APIContextProvider> */}
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+      {/* </APIContextProvider> */}
     </div>
   )
 }

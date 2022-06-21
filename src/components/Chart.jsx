@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from './../api/axios'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,12 +10,9 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import requests from '../api/requests'
+import { GetHistoricalChart } from '../api/requests'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
-
-const bitcoinUrl = requests.GetHistoryBitcoin
-const ethUrl = requests.GetHistoryEth
 
 export const options = {
   scales: { y: { display: false }, x: { display: false } },
@@ -48,6 +44,13 @@ const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11',
 let name = month[d.getMonth()]
 
 const labels = [
+  `${dayInt - 13}/${name}`,
+  `${dayInt - 12}/${name}`,
+  `${dayInt - 11}/${name}`,
+  `${dayInt - 10}/${name}`,
+  `${dayInt - 9}/${name}`,
+  `${dayInt - 8}/${name}`,
+  `${dayInt - 7}/${name}`,
   `${dayInt - 6}/${name}`,
   `${dayInt - 5}/${name}`,
   `${dayInt - 4}/${name}`,
@@ -57,43 +60,50 @@ const labels = [
   `${dayInt}/${name}`
 ]
 
-function Chart() {
-  const [bitcoin, setBitcoin] = React.useState(null)
-  const [eth, setEth] = React.useState(null)
+function Chart(props) {
+  const [historicalData, setHistoricalData] = React.useState('')
+  const [isLoaded, setloadStatus] = React.useState(false)
+  const [dataName, setData] = React.useState('Prices')
+  let url = GetHistoricalChart(props.coinId)
+
+  const fetchingHistoricalData = React.useCallback(async () => {
+    setloadStatus(false)
+    let response = await fetch(url, { 'Access-Control-Allow-Origin': '*' })
+    let data = await response.json()
+    if (dataName === 'Prices') {
+      setHistoricalData(data.prices)
+    } else {
+      setHistoricalData(data.market_caps)
+    }
+    // console.log('DATA', data)
+    setloadStatus(true)
+  }, [props.coinId])
+
+  // console.log('PROPS', props.coinId)
 
   React.useEffect(() => {
-    async function fetchBitcoin() {
-      const request = await axios.get(bitcoinUrl)
-      // console.log(request)
-      setBitcoin(request.data)
-      return request
-    }
-    fetchBitcoin()
-  }, [])
-  console.log('BITCOIN', bitcoin)
+    fetchingHistoricalData()
+  }, [fetchingHistoricalData])
 
   React.useEffect(() => {
-    async function fetchEth() {
-      const request = await axios.get(ethUrl)
-      // console.log(request)
-      setEth(request.data)
-      return request
-    }
-    fetchEth()
-  }, [])
-  console.log('ETH', eth)
+    fetchingHistoricalData()
+  }, [fetchingHistoricalData])
 
+  // console.log('HISTORY', historicalData)
   const data = {
     labels,
     datasets: [
       {
-        data: bitcoin && bitcoin.prices.map(value => value[1]),
+        data: historicalData && historicalData.map(coin => coin[1]),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
         display: false
       }
     ]
   }
+
+  if (!historicalData) return null
+
   return (
     <>
       <Line options={options} data={data} />

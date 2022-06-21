@@ -11,13 +11,13 @@ import {
   Tooltip,
   Legend
 } from 'chart.js'
-import { Line } from 'react-chartjs-2'
+
 import requests from '../api/requests'
+import Chart from './Chart'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-// const bitcoinUrl = requests.GetHistoryBitcoin
-const ethUrl = requests.GetHistoryEth
+const bitcoinUrl = requests.GetHistoryBitcoin
 
 export const options = {
   scales: { y: { display: false }, x: { display: false } },
@@ -37,55 +37,43 @@ export const options = {
   }
 }
 
-let d = new Date()
+// let d = new Date()
 
-let dayString = d.toString()
-let day = dayString.slice(8, 10)
-let dayInt = parseInt(day)
-console.log(dayInt)
+// let dayString = d.toString()
+// let day = dayString.slice(8, 10)
+// let dayInt = parseInt(day)
+// console.log(dayInt)
 
-const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+// const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
-let name = month[d.getMonth()]
+// let name = month[d.getMonth()]
 
-const labels = [
-  `${dayInt - 6}/${name}`,
-  `${dayInt - 5}/${name}`,
-  `${dayInt - 4}/${name}`,
-  `${dayInt - 3}/${name}`,
-  `${dayInt - 2}/${name}`,
-  `${dayInt - 1}/${name}`,
-  `${dayInt}/${name}`
-]
+// const labels = [
+//   `${dayInt - 6}/${name}`,
+//   `${dayInt - 5}/${name}`,
+//   `${dayInt - 4}/${name}`,
+//   `${dayInt - 3}/${name}`,
+//   `${dayInt - 2}/${name}`,
+//   `${dayInt - 1}/${name}`,
+//   `${dayInt}/${name}`
+// ]
 
-function Card({ fetchUrl }) {
+function Card({ fetchUrl }, props) {
   const [coin, setCoin] = React.useState()
-  // const [bitcoin, setBitcoin] = React.useState(null)
-  const [eth, setEth] = React.useState(null)
-
-  // React.useEffect(() => {
-  //   async function fetchBitcoin() {
-  //     const request = await axios.get(bitcoinUrl)
-  //     // console.log(request)
-  //     setBitcoin(request.data)
-  //     return request
-  //   }
-  //   fetchBitcoin()
-  // }, [])
-  // console.log('BITCOIN', bitcoin)
+  const [bitcoin, setBitcoin] = React.useState(null)
 
   React.useEffect(() => {
-    async function fetchEth() {
-      const request = await axios.get(ethUrl)
+    async function fetchBitcoin() {
+      const request = await axios.get(bitcoinUrl)
       // console.log(request)
-      setEth(request.data)
+      setBitcoin(request.data)
       return request
     }
-    fetchEth()
+    fetchBitcoin()
   }, [])
-  console.log('ETH', eth)
+  // console.log('BITCOIN', bitcoin)
 
-  // const bitcoinData = {
+  // const data = {
   //   labels,
   //   datasets: [
   //     {
@@ -97,23 +85,6 @@ function Card({ fetchUrl }) {
   //   ]
   // }
 
-  const ethData = {
-    labels,
-    datasets: [
-      {
-        data: eth && eth.prices.map(value => value[1]),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        display: false
-      }
-    ]
-  }
-
-  // let historyData = [bitcoinData, ethData]
-
-  // let fullData = [coin, historyData]
-  // console.log('FULL DATA', fullData)
-
   React.useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl)
@@ -123,11 +94,7 @@ function Card({ fetchUrl }) {
     }
     fetchData()
   }, [fetchUrl])
-  console.log('COIN', coin)
-
-  // const fullData = []
-  // const full = fullData.concat(coin, bitcoin)
-  // console.log('FULL DATA', full)
+  // console.log('COIN', coin)
 
   if (!coin) return null
 
@@ -170,12 +137,15 @@ function Card({ fetchUrl }) {
                   {item.price_change_percentage_24h} %
                 </span>
               </div>
-              {/* <div className="w-40">{}</div> */}
+              <div className="w-40">
+                <Chart coinId={item.id} />
+              </div>
               <div className="flex mt-4 space-x-3 lg:mt-6">
                 <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
-                  Analyze
+                  More
                 </button>
-                <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 ">
+
+                <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
                   Buy
                 </button>
               </div>

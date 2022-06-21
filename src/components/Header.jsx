@@ -1,11 +1,12 @@
 import React from 'react'
-import { useAPI } from '../apiContext'
+// import { useAPI } from '../apiContext'
 
 import { header } from '../images/images'
 
 function Header() {
-  const { bitcoin } = useAPI()
-  console.log('CONTEXT', bitcoin)
+  // const { bitcoin } = useAPI()
+  // console.log('CONTEXT', bitcoin)
+
   return (
     <>
       <div className="header-height">
