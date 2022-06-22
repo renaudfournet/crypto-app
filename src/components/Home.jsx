@@ -9,7 +9,7 @@ function Home() {
       <div>
         <Header />
       </div>
-      <div className=" mt-0 md:mt-10 lg:mt-52">
+      <div className="mt-40 md:mt-10 lg:mt-40">
         <Card fetchUrl={requests.CoinsList} />
       </div>
     </>

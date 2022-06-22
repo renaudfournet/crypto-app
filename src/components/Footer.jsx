@@ -21,7 +21,7 @@ function Footer() {
           </div>
         </div>
         <hr className="mt-10 mx-10" />
-        <div className="grid grid-cols-1  md:grid-cols-4 mt-10">
+        <div className="grid grid-cols-1  md:grid-cols-3 mt-10">
           <div>
             <div className="font-bold text-xl">Community</div>
             <div className="flex justify-center mt-4">
@@ -39,28 +39,20 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div>
-            <div className="font-bold text-xl text-left ml-32">Company</div>
-            <div className="flex flex-col justify-center text-xs mt-4 text-left">
-              <div className="ml-32">About Us</div>
-              <div className="ml-32">FAQ</div>
-              <div className="ml-32">Blog</div>
+          <div className="xs:mt-10 md:mt-0">
+            <div className="font-bold text-xl text-center md:text-left ml-0 md:ml-32">Company</div>
+            <div className="flex flex-col justify-center text-xs mt-4 text-center md:text-left">
+              <div className="ml-0 md:ml-32">About Us</div>
+              <div className="ml-0 md:ml-32">FAQ</div>
+              <div className="ml-0 md:ml-32">Blog</div>
             </div>
           </div>
-          <div>
-            <div className="font-bold text-xl text-left ml-32">Contact</div>
-            <div className="flex flex-col justify-center text-xs mt-4 text-left">
-              <div className="ml-32">About Us</div>
-              <div className="ml-32">FAQ</div>
-              <div className="ml-32">Blog</div>
-            </div>
-          </div>
-          <div>
-            <div className="font-bold text-xl text-left ml-32">Contact</div>
-            <div className="flex flex-col justify-center text-xs mt-4 text-left">
-              <div className="ml-32">About Us</div>
-              <div className="ml-32">FAQ</div>
-              <div className="ml-32">Blog</div>
+          <div className="xs:mt-10 md:mt-0">
+            <div className="font-bold text-xl text-center md:text-left ml-0 md:ml-32">Contact</div>
+            <div className="flex flex-col justify-center text-xs mt-4 text-center md:text-left">
+              <div className="ml-0 md:ml-32">About Us</div>
+              <div className="ml-0 md:ml-32">FAQ</div>
+              <div className="ml-0 md:ml-32">Blog</div>
             </div>
           </div>
         </div>
