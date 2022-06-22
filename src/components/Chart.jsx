@@ -95,9 +95,10 @@ function Chart(props) {
     datasets: [
       {
         data: historicalData && historicalData.map(coin => coin[1]),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        display: false
+        borderColor: 'white',
+        backgroundColor: 'black',
+        display: false,
+        borderWidth: 1
       }
     ]
   }
