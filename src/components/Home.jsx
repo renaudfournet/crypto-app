@@ -6,7 +6,7 @@ import Header from './Header'
 function Home() {
   return (
     <>
-      <div className="">
+      <div>
         <Header />
       </div>
       <div className=" mt-0 md:mt-10 lg:mt-52">
