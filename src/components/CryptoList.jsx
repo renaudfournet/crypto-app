@@ -36,7 +36,11 @@ function CryptoList() {
             <li>
               <div className="grid grid-cols-5 items-center h-16 border-t border-purple-200">
                 <div>
-                  <img className="w-7 mx-6" alt="icon_crypto" src={coin.image} />
+                  <img
+                    className="bg-white-100 rounded-full w-7 mx-6"
+                    alt="icon_crypto"
+                    src={coin.image}
+                  />
                 </div>
                 <div className=" flex justify-start">
                   <span className="font-bold">{coin.name}</span> &nbsp;
