@@ -102,9 +102,9 @@ function Card({ fetchUrl }, props) {
     <>
       <div>
         <p className="text-white-100">
-          <span className="text-1xl">Cryptomonnaies</span>
+          <span className="text-1xl">Cryptocurrencies</span>
           <br />
-          <span className="font-bold text-3xl">Cours du marché</span>
+          <span className="font-bold text-3xl">Market Prices</span>
         </p>
       </div>
       <div className="flex justify-center flex-wrap mt-8">
