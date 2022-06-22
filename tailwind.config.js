@@ -45,7 +45,7 @@ module.exports = {
           100: '#CDB3D9'
         },
         red: {
-          100: '#D2042D'
+          100: '#F43232'
         },
         white: {
           100: '#FFFFFF'
