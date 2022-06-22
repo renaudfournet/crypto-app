@@ -1,11 +1,15 @@
 import { faFacebook, faInstagram, faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { letter } from '../images/images'
 
 function Footer() {
   return (
     <>
       <div className="bg-purple-200 text-white-100 mt-72 pb-20">
-        <div className="pt-16">
+        <div className="pt-10">
+          <div className="flex justify-center mb-10">
+            <img className=" w-20" alt="contact letter" src={letter} />
+          </div>
           <p className="font-bold text-2xl">Like Our Service ? Subscribe Us</p>
         </div>
         <div className="pt-5 flex justify-center">
