@@ -5,7 +5,7 @@ import { letter } from '../images/images'
 function Footer() {
   return (
     <>
-      <div className="bg-purple-200 text-white-100 mt-72 pb-20">
+      <div className="bg-purple-200 text-white-100 mt-72 pb-36">
         <div className="pt-10">
           <div className="flex justify-center mb-10">
             <img className=" w-20" alt="contact letter" src={letter} />

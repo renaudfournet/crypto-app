@@ -23,7 +23,7 @@ function CryptoList() {
 
   return (
     <>
-      <div className="bg-black-300">
+      <div className="bg-black-300 relative">
         <div>
           <p className="text-white-100 font-bold text-2xl pt-40">MARKET PRICES</p>
         </div>
