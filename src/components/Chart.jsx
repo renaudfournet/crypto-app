@@ -37,7 +37,7 @@ let d = new Date()
 let dayString = d.toString()
 let day = dayString.slice(8, 10)
 let dayInt = parseInt(day)
-console.log(dayInt)
+// console.log(dayInt)
 
 const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 

@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import Card from '../components/Card'
 import CoinPage from '../components/CoinPage'
 import CryptoList from '../components/CryptoList'
 import Home from '../components/Home'
 import Layout from '../components/Layout'
+import React from 'react'
 
 const Router = () => {
   return (
