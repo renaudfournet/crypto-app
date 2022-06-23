@@ -126,6 +126,7 @@ function Card({ fetchUrl }, props) {
                 <span className="font-bold">{item.name}</span>&nbsp;
                 <span className="uppercase">{item.symbol}</span>
               </h5>
+              <hr className="mt-4 mb-4 mx-10 hr-border" />
               <div>
                 <p className="text-white-100 font-bold text-2xl">{item.current_price} $</p>
               </div>
