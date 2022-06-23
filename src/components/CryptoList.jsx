@@ -15,7 +15,7 @@ function CryptoList() {
       return request
     }
     fetchBitcoin()
-  }, [])
+  }, [url])
 
   console.log('COIN', coin)
 

@@ -77,7 +77,7 @@ function Chart(props) {
     }
     // console.log('DATA', data)
     setloadStatus(true)
-  }, [props.coinId])
+  }, [])
 
   // console.log('PROPS', props.coinId)
 
