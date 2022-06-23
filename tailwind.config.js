@@ -39,13 +39,13 @@ module.exports = {
           300: '#5806DD'
         },
         green: {
-          100: '#09D429'
+          100: '#40FF9F'
         },
         pink: {
           100: '#CDB3D9'
         },
         red: {
-          100: '#F43232'
+          100: '#FE354A'
         },
         white: {
           100: '#FFFFFF'
