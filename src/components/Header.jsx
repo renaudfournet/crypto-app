@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <>
-      <div className="flex justify-end ">
+      <div className="flex xxs:justify-center sm:justify-end xxs:pt-72 xs:pt-58 sm:pt-0">
         <div className="pt-20 lottie-size" ref={container}></div>
       </div>
       <p className="text-white-100 font-bold text-image text-left ml-5 xs:ml-10 sm:ml-10 md:ml-16 lg:ml-24 mb-14 xxs:mb-20 xs:mb-10 sm:mb-14 md:mb-0">
