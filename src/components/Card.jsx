@@ -112,7 +112,7 @@ function Card({ fetchUrl }, props) {
         {coin.map((item, index) => (
           <div
             key={index}
-            className="rounded-lg border-card border-purple-100  m-2 p-4 w-60 bg-card"
+            className="rounded-lg border-card border-purple-100 z-50 m-2 p-4 w-60 bg-card"
           >
             <div className="flex justify-end px-4 pt-4">
               <div id="dropdown" className="hidden z-10 w-44 text-base rounded divide-y">
@@ -144,7 +144,9 @@ function Card({ fetchUrl }, props) {
               </div>
               <div className="flex mt-4 space-x-3 lg:mt-6">
                 <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
-                  <Link to="crypto-details">More</Link>
+                  <Link to={`/coin-details/${item.id}`} state={{ coin: item }}>
+                    More
+                  </Link>
                 </button>
 
                 {/* <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">

@@ -12,7 +12,7 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="crypto" element={<CryptoList />} />
-          <Route path="coin-details" element={<CoinsDetails />} />
+          <Route path="coin-details/:id" element={<CoinsDetails />} />
         </Routes>
       </Layout>
     </>
