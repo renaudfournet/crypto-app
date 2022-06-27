@@ -9,8 +9,10 @@ function CoinsDetails() {
 
   return (
     <>
-      <div className="relative text-white-100 pt-20">
-        <div> Name : {state.coin.name}</div>
+      <div className="flex justify-center relative text-white-100 pt-20">
+        <div>
+          Name : {state.coin.name} {state.coin.symbol}
+        </div>
         <div> High : {state.coin.high_24h}</div>
         <div> Low : {state.coin.low_24h}</div>
         <div className="w-40">
