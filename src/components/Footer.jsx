@@ -14,7 +14,7 @@ function Footer() {
         </div>
         <div className="pt-5 flex justify-center">
           <input
-            class="block h-14 input-width text-xs pl-6 text-white-100 border placeholder-white-100 rounded-full  bg-pink-100"
+            className="block h-14 input-width text-xs pl-6 text-white-100 border placeholder-white-100 rounded-full  bg-pink-100"
             type="text"
             placeholder="Enter your email"
           />

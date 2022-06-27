@@ -14,6 +14,7 @@ import {
 
 import requests from '../api/requests'
 import Chart from './Chart'
+import { Link } from 'react-router-dom'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
@@ -60,17 +61,17 @@ export const options = {
 
 function Card({ fetchUrl }, props) {
   const [coin, setCoin] = React.useState()
-  const [bitcoin, setBitcoin] = React.useState(null)
+  // const [bitcoin, setBitcoin] = React.useState(null)
 
-  React.useEffect(() => {
-    async function fetchBitcoin() {
-      const request = await axios.get(bitcoinUrl)
-      // console.log(request)
-      setBitcoin(request.data)
-      return request
-    }
-    fetchBitcoin()
-  }, [])
+  // React.useEffect(() => {
+  //   async function fetchBitcoin() {
+  //     const request = await axios.get(bitcoinUrl)
+  //     // console.log(request)
+  //     setBitcoin(request.data)
+  //     return request
+  //   }
+  //   fetchBitcoin()
+  // }, [])
   // console.log('BITCOIN', bitcoin)
 
   // const data = {
@@ -141,15 +142,15 @@ function Card({ fetchUrl }, props) {
               <div className="w-40">
                 <Chart coinId={item.id} />
               </div>
-              {/* <div className="flex mt-4 space-x-3 lg:mt-6">
+              <div className="flex mt-4 space-x-3 lg:mt-6">
                 <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
-                  More
+                  <Link to="crypto-details">More</Link>
                 </button>
 
-                <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
+                {/* <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
                   Buy
-                </button>
-              </div> */}
+                </button> */}
+              </div>
             </div>
           </div>
         ))}

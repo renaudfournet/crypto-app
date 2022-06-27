@@ -47,8 +47,8 @@ function CryptoList() {
               </tr>
             </thead>
             <tbody>
-              {coin.map(coin => (
-                <tr className="bg-white border-t border-purple-200">
+              {coin.map((coin, index) => (
+                <tr key={index} className="bg-white border-t border-purple-200">
                   <th
                     scope="row"
                     className="px-6 py-4 font-medium  dark:text-white whitespace-nowrap sticky left-0 z-10 bg-black-300"
