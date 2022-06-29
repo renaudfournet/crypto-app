@@ -54,7 +54,7 @@ function Footer() {
           <div className="xs:mt-10 md:mt-0">
             <div className="font-bold text-xl text-center md:text-left ml-0 md:ml-32">Contact</div>
             <div className="flex flex-col justify-center text-xs mt-4 text-center md:text-left">
-              <div className="ml-0 md:ml-32">Email</div>
+              <div className="ml-0 md:ml-32"></div>
               <div className="ml-0 md:ml-32">FAQ</div>
               <div className="ml-0 md:ml-32">Blog</div>
             </div>
