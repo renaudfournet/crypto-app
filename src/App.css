@@ -50,6 +50,10 @@
   border: solid 0.5px #7520ff;
 }
 
+.font-size-button {
+  font-size: 0.6em;
+}
+
 .input-width {
   width: 500px;
 }
