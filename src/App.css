@@ -2,6 +2,10 @@
   width: 90%;
 }
 
+.text-align-card {
+  text-align: start !important;
+}
+
 .hr-border {
   border: solid #5b1ace 1px !important;
   width: 90%;

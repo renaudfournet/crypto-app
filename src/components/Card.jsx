@@ -119,7 +119,7 @@ function Card({ fetchUrl }, props) {
                 text
               </div>
             </div>
-            <div className="flex flex-col items-center pb-10">
+            <div className="flex flex-col items-center pb-2">
               <div className="text-white-100 m-2">
                 <img className="w-10" alt="logo crypto" src={item.image} />
               </div>
