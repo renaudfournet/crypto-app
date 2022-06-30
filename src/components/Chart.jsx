@@ -39,11 +39,51 @@ let day = dayString.slice(8, 10)
 let dayInt = parseInt(day)
 // console.log(dayInt)
 
-const month = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+const month = [
+  '01',
+  '02',
+  '03',
+  '04',
+  '05',
+  '06',
+  '07',
+  '08',
+  '09',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+  '24',
+  '25',
+  '26'
+]
 
 let name = month[d.getMonth()]
 
 const labels = [
+  `${dayInt - 26}/${name}`,
+  `${dayInt - 25}/${name}`,
+  `${dayInt - 24}/${name}`,
+  `${dayInt - 23}/${name}`,
+  `${dayInt - 22}/${name}`,
+  `${dayInt - 21}/${name}`,
+  `${dayInt - 20}/${name}`,
+  `${dayInt - 19}/${name}`,
+  `${dayInt - 18}/${name}`,
+  `${dayInt - 17}/${name}`,
+  `${dayInt - 16}/${name}`,
+  `${dayInt - 15}/${name}`,
+  `${dayInt - 14}/${name}`,
   `${dayInt - 13}/${name}`,
   `${dayInt - 12}/${name}`,
   `${dayInt - 11}/${name}`,
@@ -75,7 +115,7 @@ function Chart(props) {
     } else {
       setHistoricalData(data.market_caps)
     }
-    // console.log('DATA', data)
+    console.log('DATA', data)
     setloadStatus(true)
   }, [])
 

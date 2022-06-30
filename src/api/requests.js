@@ -6,7 +6,7 @@ const requests = {
 export default requests
 
 export const GetHistoricalChart = id =>
-  `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=14&interval=daily`
+  `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=30&interval=daily`
 
 export const GetCoinData = id => `https://api.coingecko.com/api/v3/coins/${id}?`
 

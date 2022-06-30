@@ -12,13 +12,13 @@ import {
   Legend
 } from 'chart.js'
 
-import requests from '../api/requests'
+// import requests from '../api/requests'
 import Chart from './Chart'
 import { Link } from 'react-router-dom'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-const bitcoinUrl = requests.GetHistoryBitcoin
+// const bitcoinUrl = requests.GetHistoryBitcoin
 
 export const options = {
   scales: { y: { display: false }, x: { display: false } },

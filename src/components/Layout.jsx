@@ -19,7 +19,6 @@ function Layout({ children }) {
 
   return (
     <>
-      <div className="absolute top-0 bg-auto z-50" ref={container}></div>
       <div className="relative">
         <Navbar />
         {children}
