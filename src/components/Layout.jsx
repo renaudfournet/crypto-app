@@ -3,6 +3,7 @@ import lottie from 'lottie-web'
 
 import Footer from './Footer'
 import Navbar from './Navbar'
+import { useLocation } from 'react-router-dom'
 
 function Layout({ children }) {
   const container = useRef(null)
@@ -18,6 +19,14 @@ function Layout({ children }) {
     })
   }, [])
 
+  function useScrollToTop() {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname])
+  }
+  useScrollToTop()
   return (
     <>
       <div>
