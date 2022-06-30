@@ -19,7 +19,7 @@ function CryptoList() {
 
   console.log('COIN', coin)
 
-  if (!coin) return null
+  if (!coin) return <div className="bg-black-300 relative">Loading ...</div>
 
   return (
     <>
