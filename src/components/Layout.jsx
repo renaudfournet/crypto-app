@@ -13,13 +13,14 @@ function Layout({ children }) {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: require('../images/anim/bg-lottie.json')
+      animationData: require('../images/anim/bg-lottie.json'),
+      resizeMode: 'cover'
     })
   }, [])
 
   return (
     <>
-      <div className="relative">
+      <div>
         <Navbar />
         {children}
         <Footer />

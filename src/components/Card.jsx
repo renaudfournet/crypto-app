@@ -112,7 +112,7 @@ function Card({ fetchUrl }, props) {
         {coin.map((item, index) => (
           <div
             key={index}
-            className="rounded-lg border-card border-purple-100 z-50 m-2 p-4 w-60 bg-card"
+            className="rounded-lg border-card border-purple-100 m-2 p-4 w-60 bg-card"
           >
             <div className="flex justify-end px-4 pt-4">
               <div id="dropdown" className="hidden z-10 w-44 text-base rounded divide-y">
