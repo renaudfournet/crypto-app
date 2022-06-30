@@ -143,11 +143,11 @@ function Card({ fetchUrl }, props) {
                 <Chart coinId={item.id} />
               </div>
               <div className="flex mt-4 space-x-3 lg:mt-6">
-                {/* <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
+                <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
                   <Link to={`/coin-details/${item.id}`} state={{ coin: item }}>
                     More
                   </Link>
-                </button> */}
+                </button>
 
                 {/* <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg ">
                   Buy

@@ -9,34 +9,32 @@ function CoinsDetails() {
 
   return (
     <>
-      <div class="grid grid-rows-3 grid-flow-col gap-4 text-black-100 pt-20">
-        <div class="flex justify-between col-span-2 bg-whitesmoke-100">
+      <div class="grid grid-cols-4 gap-4 p-5 pt-20">
+        <div class=" bg-whitesmoke-100 text-black-100 text-lg font-bold text-center p-10 rounded-lg">
           <div>
             Name : {state.coin.name} {state.coin.symbol}
           </div>
-          <div>Market Cap</div>
-          <div>Volume</div>
         </div>
-        <div class="row-span-2 col-span-2 bg-whitesmoke-100">
+        <div class=" bg-whitesmoke-100 text-black-100 text-lg font-bold text-center p-10 rounded-lg">
+          <div class="bg-whitesmoke-100">
+            <div>Market Cap</div>
+          </div>
+        </div>
+        <div class=" bg-whitesmoke-100 text-black-100 text-lg font-bold text-center p-10 rounded-lg row-span-1">
+          <div class="bg-whitesmoke-100">
+            <div>Volume</div>
+          </div>
+        </div>
+        <div class=" bg-whitesmoke-100 text-black-100 text-lg font-bold text-center p-10 rounded-lg row-span-2">
+          <div> High : {state.coin.high_24h}</div>
+          <div> Low : {state.coin.low_24h}</div>
+        </div>
+        <div class=" bg-whitesmoke-100 text-black-100 text-lg font-bold text-center p-10 rounded-lg col-span-3">
           <div className="w-40">
             <Chart coinId={state.coin.id} />
           </div>
         </div>
-        <div class="row-span-3 bg-whitesmoke-100">
-          <div> High : {state.coin.high_24h}</div>
-          <div> Low : {state.coin.low_24h}</div>
-        </div>
       </div>
-      {/* <div className="flex justify-center relative text-white-100 pt-20">
-        <div>
-          Name : {state.coin.name} {state.coin.symbol}
-        </div>
-        <div> High : {state.coin.high_24h}</div>
-        <div> Low : {state.coin.low_24h}</div>
-        <div className="w-40">
-          <Chart coinId={state.coin.id} />
-        </div>
-      </div> */}
     </>
   )
 }
